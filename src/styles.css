@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    /* --custred: rgb(200, 0, 100); */
+    --custred: rgb(230, 40, 40);
+    --custred-visited: rgb(200, 80, 150);
+    --custred-borders: rgb(180, 90, 90);
+    --custred-hover: rgb(255, 0, 90);
+    --custred-active: rgb(210, 0, 00);
+    --lightblack: #1f1f1f;
+    --lighterblack: #2b2b2b;
+    --extralighterblack: #353535;
+}
+
+.btn-cust {
+    background-color: var(--custred);
+    color: white;
+}
+
+.btn-cust:disabled {
+    background-color: var(--lighterblack);
+}
+
+.btn-cust:hover {
+    background-color: var(--custred-hover);
+}
+
+.form-control {
+    background-color: var(--lightblack);
+    color:lightgray;
+    border-color: var(--custred-borders);
+}
+
+.form-control:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--custred);
+    border-color: var(--custred);
+    background-color: var(--lightblack);
+    color:lightgray
+}
+
+.form-control::placeholder {
+    color: gray;
+}
+
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: rgba(255, 0, 0, 0);
+    border: 20px;
+}
+
+.nav-pills .pill-1 .nav-link {
+    background-color: var(--custred);
+}
+
+.nav-pills .pill-1 .nav-link:hover {
+    background-color: var(--custred-hover);
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: var(--custred);
+    color: white;
+    border-color: var(--custred-borders);
+}
+
+.nav-tabs .nav-item .nav-link:not(.active) {
+    background-color: rgba(255, 0, 0, 0);
+    color: lightgray;
+    border-color: var(--custred-borders);
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+    background-color: var(--custred-hover);
+    color: white;
+}
+
+a:link {
+    color: var(--custred);
+}
+
+a:visited {
+    color: var(--custred-visited);
+}
+
+a:hover {
+    color: var(--custred-hover);
+}
+
+a:active {
+    color: var(--custred);
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    color: lightgray;
+    background: linear-gradient(
+        90deg,
+        var(--custred-borders) -15%,
+        var(--extralighterblack) 15%,
+        var(--extralighterblack) 85%,
+        var(--custred-borders) 115%
+    )
+}
+
+.darker {
+    background-color: var(--lightblack);
+    color: lightgray;
+}
+
+.lighter-darker {
+    background-color: var(--lighterblack);
+    color: lightgray;
+}
+
+.extra-lighter-darker {
+    background-color: var(--extralighterblack);
+    color: lightgray;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.border-custred {
+    border-color: var(--custred-borders) !important;
+}
+
+.table-dark {
+    color: lightgray;
+    background-color: var(--lighterblack);
+}

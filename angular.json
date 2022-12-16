@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-universal-portfolio",
+            "outputPath": "dist/angular-universal-portfolio/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -91,6 +92,59 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-universal-portfolio/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "angular-universal-portfolio:build:development",
+              "serverTarget": "angular-universal-portfolio:server:development"
+            },
+            "production": {
+              "browserTarget": "angular-universal-portfolio:build:production",
+              "serverTarget": "angular-universal-portfolio:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-universal-portfolio:build:production",
+              "serverTarget": "angular-universal-portfolio:server:production"
+            },
+            "development": {
+              "browserTarget": "angular-universal-portfolio:build:development",
+              "serverTarget": "angular-universal-portfolio:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
