@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { CvComponent } from './cv/cv.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProjetsComponent } from './projets/projets.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
-  {path: '', redirectTo: "/about", pathMatch: 'full'},
-  // {path: "home", component: HomeComponent},
-  {path: "projets", component: ProjetsComponent},
-  // {path: "veille", component: VeilleTechnoComponent},
-  {path: "about", component: CvComponent},
-  {path: "contact", component: ContactComponent},
-  {path: "**", component: PageNotFoundComponent}
+  { path: '', redirectTo: "/about", pathMatch: 'full' },
+  { path: 'about', loadChildren: () => import('./cv/cv.module').then(m => m.CvModule) },
+  { path: "contact", loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
+  {path: 'projets', loadChildren: () => import('./projets/projets.module').then(m => m.ProjetsModule)},
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabledBlocking'
-})],
+  }),
+  SharedModule
+],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
