@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GhReposService } from '../gh-repos.service';
 import { Repository } from '../repository';
@@ -6,14 +6,13 @@ import { Repository } from '../repository';
 @Component({
   selector: 'app-repositories',
   templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css']
+  styleUrls: ['./repositories.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepositoriesComponent {
-  repos$: any | undefined;
+  repos$: Observable<Repository[]>;
 
-  constructor(ghReposService: GhReposService) {
-    ghReposService.getRepos().subscribe((data: any) => {
-      this.repos$ = data;
-    });
+  constructor(private ghReposService: GhReposService) {
+    this.repos$ = this.ghReposService.getRepos();
   }
 }

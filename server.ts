@@ -10,13 +10,16 @@ import { AppServerModule } from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
+  const compression = require('compression');
   const server = express();
+  server.use(compression());
   const distFolder = join(process.cwd(), 'dist/angular-universal-portfolio/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-
+  
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
+    inlineCriticalCss: false,
+    bootstrap: AppServerModule
   }));
 
   server.set('view engine', 'html');
