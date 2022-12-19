@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PostNavHeaderComponent } from '../shared/post-nav-header/post-nav-header.component';
+import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.component';
 import { GhReposService } from './gh-repos.service';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { Repository } from './repository';

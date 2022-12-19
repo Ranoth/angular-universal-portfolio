@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
-import { PostNavHeaderComponent } from '../shared/post-nav-header/post-nav-header.component';
+import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.component';
 import { Contact } from './contact';
 import { ContactService } from './contact.service';
 import { FormsModule } from '@angular/forms';

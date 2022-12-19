@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { PostNavHeaderComponent } from '../shared/post-nav-header/post-nav-header.component';
+import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.component';
 
 @Component({
   selector: 'app-cv',
