@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, RouterModule, NgbModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

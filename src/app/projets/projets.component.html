@@ -1,2 +1,4 @@
 <app-post-nav-header headerText="Mon GitHub" headerIcon="../../assets/images/icons8-github-50.png" headerLink="http://github.com/Ranoth" invertion="invert"></app-post-nav-header>
-<app-repositories></app-repositories>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+    <app-repositories *ngFor="let repo of repos$ | async" [repo]="repo"></app-repositories>
+</div>

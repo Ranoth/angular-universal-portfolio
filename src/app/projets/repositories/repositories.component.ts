@@ -1,18 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GhReposService } from '../gh-repos.service';
 import { Repository } from '../repository';
 
 @Component({
   selector: 'app-repositories',
+  standalone: true,
+  imports: [CommonModule, HttpClientModule],
+  providers: [GhReposService],
   templateUrl: './repositories.component.html',
   styleUrls: ['./repositories.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepositoriesComponent {
-  repos$: Observable<Repository[]>;
-
-  constructor(private ghReposService: GhReposService) {
-    this.repos$ = this.ghReposService.getRepos();
-  }
+  @Input() public repo!: Repository;
 }

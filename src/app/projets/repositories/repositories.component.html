@@ -1,52 +1,24 @@
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-    <div class="col p-2" *ngFor="let repo of repos$ | async">
-        <div class="card h-100 border border-custred lighter-darker rounded-4">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
-                </h5>
-                <p class="card-text">{{repo.description}}</p>
-            </div>
-            <div class="card-header border-top border-bottom-0 border-custred darker rounded-4">
-                <ul class="list-group list-group-flush list-group-horizontal">
-                    <li class="list-group-item darker border-0">
-                        <img class="me-2 invert" width="16" src="../../assets/images/source code.png" alt="Language">
-                        {{repo.language}}
-                    </li>
-                    <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
-                            src="../../assets/images/icons8-star-50.png" alt="Stargazers">
-                        {{repo.stargazers_count}}</li>
-                    <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
-                            src="../../assets/images/icons8-code-fork-30.png" alt="Forks">
-                        {{repo.forks_count}}</li>
-                </ul>
-            </div>
+<div class="col p-2">
+    <div class="card h-100 border border-custred lighter-darker rounded-4">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+            </h5>
+            <p class="card-text">{{repo.description}}</p>
         </div>
-    </div>
-</div>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col p-2" *ngFor="let repo of repos$ | async">
-        <div class="card h-100 border border-custred lighter-darker rounded">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
-                </h5>
-                <p class="card-text">{{repo.description}}</p>
-            </div>
-            <div class="card-header border-top border-bottom-0 border-custred darker rounded">
-                <ul class="list-group list-group-flush list-group-horizontal">
-                    <li class="list-group-item darker border-0">
-                        <img class="me-2 invert" width="16" src="../../assets/images/source code.png" alt="Language">
-                        {{repo.language}}
-                    </li>
-                    <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
-                            src="../../assets/images/icons8-star-50.png" alt="Stargazers">
-                        {{repo.stargazers_count}}</li>
-                    <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
-                            src="../../assets/images/icons8-code-fork-30.png" alt="Forks">
-                        {{repo.forks_count}}</li>
-                </ul>
-            </div>
+        <div class="card-header border-top border-bottom-0 border-custred darker rounded-4">
+            <ul class="list-group list-group-flush list-group-horizontal">
+                <li class="list-group-item darker border-0">
+                    <img class="me-2 invert" width="16" src="../../assets/images/source code.png" alt="Language">
+                    {{repo.language}}
+                </li>
+                <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
+                        src="../../assets/images/icons8-star-50.png" alt="Stargazers">
+                    {{repo.stargazers_count}}</li>
+                <li class="list-group-item darker rounded border-0"><img class="me-2 invert" width="16"
+                        src="../../assets/images/icons8-code-fork-30.png" alt="Forks">
+                    {{repo.forks_count}}</li>
+            </ul>
         </div>
     </div>
 </div>
