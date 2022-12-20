@@ -12,13 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [CommonModule, PostNavHeaderComponent, FormsModule, HttpClientModule],
   providers: [ContactService],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
   public contactModel = new Contact();
   public submitted: boolean = false;
 
-  constructor(readonly contactService: ContactService) { }
+  constructor(private contactService: ContactService) { }
 
   onSubmit() {
     this.contactService.submitContact(this.contactModel);

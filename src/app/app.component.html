@@ -1,5 +1,5 @@
 <app-header></app-header>
-<main class="container">
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
-</main>
+  <main class="container route-content" [@routeAnimations]="getRouteAnimationData()">
+    <router-outlet></router-outlet>
+  </main>
+<app-footer></app-footer>

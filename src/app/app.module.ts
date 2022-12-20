@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { GhReposService } from './projets/gh-repos.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,9 +16,10 @@ import { GhReposService } from './projets/gh-repos.service';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BrowserAnimationsModule
   ],
-  providers: [GhReposService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

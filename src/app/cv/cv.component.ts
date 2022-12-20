@@ -8,7 +8,7 @@ import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.compo
   standalone: true,
   imports: [CommonModule, PostNavHeaderComponent],
   templateUrl: './cv.component.html',
-  styleUrls: ['./cv.component.css']
+  styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
   constructor(private title: Title, private metaTag: Meta) {

@@ -1,12 +1,14 @@
 <header name="SiteHeader" class="pt-3">
-    <h1 class="text-center">Léo "Ranoth" Buhot</h1>
-  </header>
-  
-  <div name="navbar" class="container pt-1 pt-b sticky-md-top">
-    <ul ngbNav [activeId]="route.fragment | async" class="nav-pills justify-content-center darker mb-4 mt-2 p-2 border border-custred rounded-4 shadow" role="tablist">
-        <li [ngbNavItem]="link.fragment" *ngFor="let link of links" class="nav-item pill-1">
-            <a class="m-1 shadow rounded-4" ngbNavLink [routerLink]="link.fragment" routerLinkActive="active" [style.color]="'lightgray'" role="tab">{{
-                link.title}}</a>
-        </li>
-    </ul>
-  </div>
+  <h1 class="text-center">Léo "Ranoth" Buhot</h1>
+</header>
+
+<div name="navbar" class="container pt-1 pt-b sticky-md-top">
+  <ul ngbNav [activeId]="route.fragment | async"
+    class="nav-pills justify-content-center darker mb-4 mt-2 p-2 border border-custred rounded-4 shadow" role="tablist">
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links" class="nav-item pill-1">
+      <a class="m-1 shadow rounded-4" ngbNavLink [routerLink]="link.fragment" routerLinkActive="active"
+        [style.color]="'lightgray'" role="tab">{{
+        link.title}}</a>
+    </li>
+  </ul>
+</div>

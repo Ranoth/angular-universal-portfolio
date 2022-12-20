@@ -7,15 +7,18 @@ const routes: Routes = [
   { path: '', redirectTo: "/about", pathMatch: 'full' },
   {
     path: 'about',
-    loadComponent: () => import('./cv/cv.component').then(m => m.CvComponent)
+    loadComponent: () => import('./cv/cv.component').then(m => m.CvComponent),
+    data: { animation: 'fadeA' }
   },
   {
     path: 'projets',
-    loadComponent: () => import('./projets/projets.component').then(m => m.ProjetsComponent)
+    loadComponent: () => import('./projets/projets.component').then(m => m.ProjetsComponent),
+    data: { animation: 'fadeP' }
   },
   {
     path: 'contact',
-    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
+    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent),
+    data: { animation: 'fadeC' }
   },
   { path: "**", component: PageNotFoundComponent }
 ];

@@ -26,7 +26,7 @@
 
 .form-control {
     background-color: var(--lightblack);
-    color:white;
+    color: white;
     border-color: var(--custred-borders);
 }
 
@@ -34,7 +34,7 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--custred);
     border-color: var(--custred);
     background-color: var(--lightblack);
-    color:white
+    color: white
 }
 
 .form-control::placeholder {
@@ -93,13 +93,11 @@ html {
 
 body {
     color: white;
-    background: linear-gradient(
-        90deg,
-        var(--custred-borders) -15%,
-        var(--extralighterblack) 15%,
-        var(--extralighterblack) 85%,
-        var(--custred-borders) 115%
-    )
+    background: linear-gradient(90deg,
+            var(--custred-borders) -15%,
+            var(--extralighterblack) 15%,
+            var(--extralighterblack) 85%,
+            var(--custred-borders) 115%)
 }
 
 .darker {
