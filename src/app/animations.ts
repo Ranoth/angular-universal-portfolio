@@ -16,7 +16,7 @@ export const fader = trigger('routeAnimations', [
             animate('1ms', style({ position: 'absolute' }))
         ], optional),
         query(':enter', [
-            style({ opacity: 0, display: 'block' }),
+            style({ opacity: 0 }),
             animate('150ms', style({ opacity: 1 }))
         ], optional),
     ])
