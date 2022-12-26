@@ -8,17 +8,17 @@ const routes: Routes = [
   {
     path: 'about',
     loadComponent: () => import('./cv/cv.component').then(m => m.CvComponent),
-    data: { animation: 'fadeA' }
+    data: { animation: 'about' }
   },
   {
     path: 'projets',
     loadComponent: () => import('./projets/projets.component').then(m => m.ProjetsComponent),
-    data: { animation: 'fadeP' }
+    data: { animation: 'projets' }
   },
   {
     path: 'contact',
     loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent),
-    data: { animation: 'fadeC' }
+    data: { animation: 'contact' }
   },
   { path: "**", component: PageNotFoundComponent }
 ];
