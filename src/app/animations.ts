@@ -3,7 +3,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 const optional = { optional: true };
 
 export const fadeInOut = trigger('routeAnimations', [
-    transition('undef => *', []),
+    transition('undef => *', []), //Somehow void keyword doesn't work, so I found a workaround
     transition('* => undef', []),
     transition('* <=> *', [
         style({ position: 'relative', height: '100%' }),
