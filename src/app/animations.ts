@@ -12,12 +12,12 @@ export const fader = trigger('routeAnimations', [
         }), optional),
         query(':leave', [
             style({ opacity: 1 }),
-            animate('299ms', style({ opacity: 0 })),
+            animate('149ms', style({ opacity: 0 })),
             animate('1ms', style({ position: 'absolute' }))
         ], optional),
         query(':enter', [
             style({ opacity: 0, display: 'block' }),
-            animate('300ms', style({ opacity: 1 }))
+            animate('150ms', style({ opacity: 1 }))
         ], optional),
     ])
 ])
