@@ -13,6 +13,6 @@ import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.compo
 export class CvComponent {
   constructor(private title: Title, private metaTag: Meta) {
     this.title.setTitle("Qui suis-je");
-    this.metaTag.updateTag({ name: "description", content: "mon CV" })
+    this.metaTag.updateTag({ name: "description", content: "Mon CV" })
   }
 }

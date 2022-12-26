@@ -12,7 +12,7 @@ import { fader } from './animations';
   providers: [BrowserAnimationsModule]
 })
 export class AppComponent {
-  title = 'angular-universal-portfolio';
+  title?: string = 'angular-universal-portfolio';
 
   constructor(private contexts: ChildrenOutletContexts, private metaTag: Meta) {
     this.metaTag.addTags([

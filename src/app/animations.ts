@@ -3,12 +3,8 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 const optional = { optional: true };
 
 export const fader = trigger('routeAnimations', [
-    transition('undef => *', [
-        style({ opacity: 1 })
-    ]),
-    transition('* => undef', [
-        style({ opacity: 1 })
-    ]),
+    transition('undef => *', []),
+    transition('* => undef', []),
     transition('* <=> *', [
         style({ position: 'relative' }),
         query(':enter, :leave', style({

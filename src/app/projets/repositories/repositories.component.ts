@@ -14,5 +14,5 @@ import { Repository } from '../repository';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepositoriesComponent {
-  @Input() public repo!: Repository;
+  @Input() repo!: Repository;
 }

@@ -5,6 +5,7 @@ import { Contact } from './contact';
 import { ContactService } from './contact.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -15,10 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  public contactModel = new Contact();
-  public submitted: boolean = false;
+  contactModel = new Contact();
+  submitted: boolean = false;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private title: Title, private metaTag: Meta) {
+    this.title.setTitle("Prendre contact");
+    this.metaTag.updateTag({ name: "description", content: "Formulaire de contact" })
+  }
 
   onSubmit() {
     this.contactService.submitContact(this.contactModel);
