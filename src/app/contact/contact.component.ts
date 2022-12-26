@@ -6,7 +6,6 @@ import { ContactService } from './contact.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
-import { contactInOut } from '../animations';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +14,7 @@ import { contactInOut } from '../animations';
   providers: [ContactService],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
-  animations: [contactInOut]
+  animations: []
 })
 export class ContactComponent {
   contactModel = new Contact();
