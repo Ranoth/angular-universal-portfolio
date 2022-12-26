@@ -2,22 +2,32 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 
 const optional = { optional: true };
 
-export const routeFadeInOut = trigger('routeAnimations', [
+export const fadeInOut = trigger('routeAnimations', [
     transition('undef => *', []),
     transition('* => undef', []),
     transition('* <=> *', [
-        style({ position: 'relative' }),
+        style({ position: 'relative', height: '100%' }),
         query(':enter, :leave', style({
-            opacity: 0,
+            opacity: 0
         }), optional),
         query(':leave', [
-            style({ opacity: 1 }),
-            animate('149ms', style({ opacity: 0 })),
-            animate('1ms', style({ position: 'absolute' }))
+            style({ opacity: 1, position: 'absolute', left: 0, top: 0 , width: '100%' }),
+            animate('550ms ease-out', style({ opacity: 0 })),
         ], optional),
         query(':enter', [
-            style({ opacity: 0 }),
-            animate('150ms', style({ opacity: 1 }))
+            style({ opacity: 0}),
+            animate('550ms ease-in', style({ opacity: 1 }))
         ], optional),
     ])
+])
+
+export const contactInOut = trigger('contactInOut', [
+    transition(':leave', [
+        style({ opacity: 1, left: 0, top: 0, position: 'absolute' }),
+        animate('500ms', style({ opacity: 0 })),
+    ]),
+    transition(':enter', [
+        style({ opacity: 0, width: '100%' }),
+        animate('500ms', style({ opacity: 1 })),
+    ]),
 ])

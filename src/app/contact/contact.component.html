@@ -1,4 +1,4 @@
-<div *ngIf="!submitted; else elseBlock">
+<div [@contactInOut] *ngIf="!submitted; else elseBlock" class="ifTemplate">
     <app-post-nav-header headerText="Contactez moi !"></app-post-nav-header>
 
     <form #contactForm="ngForm" novalidate (ngSubmit)="onSubmit()">
@@ -6,8 +6,9 @@
             <div class="col">
                 <div class="form-group">
                     <label for="nom">Votre nom :</label>
-                    <input type="text" class="form-control rounded-4" name="nom" #name="ngModel" placeholder="Jean Dupon"
-                        required [(ngModel)]="contactModel.nom" [class.is-invalid]="name.invalid && name.touched">
+                    <input type="text" class="form-control rounded-4" name="nom" #name="ngModel"
+                        placeholder="Jean Dupon" required [(ngModel)]="contactModel.nom"
+                        [class.is-invalid]="name.invalid && name.touched">
                 </div>
                 <small class="text-danger" [class.d-none]="name.valid || name.untouched">Votre nom est requis</small>
             </div>
@@ -47,10 +48,12 @@
 </div>
 
 <ng-template #elseBlock>
-    <div class="d-flex justify-content-center mt-4">
-        <h2>Merci d'avoir pris contact !</h2>
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-cust" (click)="onReturnClick()">Retour</button>
+    <div [@contactInOut] class="ifTemplate">
+        <div class="d-flex justify-content-center mt-4">
+            <h2>Merci d'avoir pris contact !</h2>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-cust" (click)="onReturnClick()">Retour</button>
+        </div>
     </div>
 </ng-template>

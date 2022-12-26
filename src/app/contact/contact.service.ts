@@ -10,6 +10,6 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   submitContact(contact: Contact) {
-    return this.http.post<Contact>(environment.formspreeApiUrl, contact).subscribe();
+    // return this.http.post<Contact>(environment.formspreeApiUrl, contact).subscribe();
   }
 }

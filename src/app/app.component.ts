@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChildrenOutletContexts } from '@angular/router';
-import { routeFadeInOut } from './animations';
+import { fadeInOut } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [routeFadeInOut],
+  animations: [fadeInOut],
   providers: [BrowserAnimationsModule]
 })
 export class AppComponent {
