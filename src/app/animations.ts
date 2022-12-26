@@ -2,7 +2,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 
 const optional = { optional: true };
 
-export const fader = trigger('routeAnimations', [
+export const routeFadeInOut = trigger('routeAnimations', [
     transition('undef => *', []),
     transition('* => undef', []),
     transition('* <=> *', [
