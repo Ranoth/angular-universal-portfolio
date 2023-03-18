@@ -3,7 +3,7 @@ import { animate, query, style, transition, trigger } from '@angular/animations'
 const optional = { optional: true };
 
 export const fadeInOut = trigger('routeAnimations', [
-    transition('undef => *', []), //Somehow void keyword doesn't work, so I found a workaround
+    transition('undef => *', []), // Workadround to void not working
     transition('* => undef', []),
     transition('* <=> *', [
         style({ position: 'relative', height: '100%' }),
