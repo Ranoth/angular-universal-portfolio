@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.component';
 import { Contact } from './contact';
-import { ContactService } from './contact.service'import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactService } from './contact.service';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
 

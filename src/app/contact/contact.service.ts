@@ -9,7 +9,12 @@ import { Contact } from './contact';
 export class ContactService {
   constructor(private http: HttpClient) { }
 
+  /**
+   * desc
+   * @date 2023-03-22
+   * @param { Contact } contact
+   */
   submitContact(contact: Contact) {
-    return this.http.post<Contact>(environment.formspreeApiUrl, contact).subscribe();
+    return this.http.post<Contact>(environment.formspreeApiUrl, contact).subscribe();    
   }
 }
