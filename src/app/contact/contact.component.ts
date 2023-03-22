@@ -2,11 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PostNavHeaderComponent } from '../post-nav-header/post-nav-header.component';
 import { Contact } from './contact';
-import { ContactService } from './contact.service';
-import { FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactService } from './contact.service'import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
-import { HtmlTagDefinition } from '@angular/compiler';
 
 @Component({
   selector: 'app-contact',
@@ -33,6 +31,11 @@ export class ContactComponent {
     this.metaTag.updateTag({ name: "description", content: "Formulaire de contact" })
   }
 
+  /**
+   * desc
+   * @date 2023-03-22
+   * @returns { void }
+   */
   onSubmit(): void {
     if (this.contactForm.invalid) return;
     this.contactModel = this.contactForm.value as Contact;
@@ -40,6 +43,11 @@ export class ContactComponent {
     this.submitted = true;
   }
 
+  /**
+   * desc
+   * @date 2023-03-22
+   * @returns { void }
+   */
   onReturnClick(): void {
     this.contactForm.reset();
     this.contactModel = new Contact();
